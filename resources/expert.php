@@ -38,5 +38,15 @@ echo $monday;
  * Corrections :  to display monday need to make the array index zero as $week[0]
  */
 
+new_exercise(3);
+// === Exercise 3 ===
+// This should echo ` "Debugged !" `, fix it so that that is the literal text echo'ed
+
+$str ="“Debugged ! Also very fun”";
+echo substr($str, 0, 14)."”";
+
+/**
+ * Corrections : add double quotes to the value of variable str
+ */
 
 ?>
