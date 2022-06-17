@@ -21,4 +21,22 @@ new_exercise();
  * Corrections : add function call.
  *               to display $x add \ before $ so it will not consider as variable
  */
+
+
+ 
+new_exercise(2);
+// === Exercise 2 ===
+// Below we create a week array with all days of the week.
+// We then try to print the first day which is monday, execute the code and see what happens.
+
+$week = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"];
+$monday = $week[0];
+
+echo $monday;
+
+/**
+ * Corrections :  to display monday need to make the array index zero as $week[0]
+ */
+
+
 ?>
