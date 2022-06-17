@@ -9,17 +9,17 @@ declare(strict_types=1);
 // sometimes, even your IDE can tell you what's wrong
 echo "Exercise 1 starts here:";
 
-function new_exercise() {
-    $block = "<br/><hr/><br/><br/>Exercise \$x starts here:<br/>";
+function new_exercise($x) {
+    $block = "<br/><hr/><br/><br/>Exercise $x starts here:<br/>";
     echo $block;
 
 }
-new_exercise();
+new_exercise(1);
 
 
 /**
- * Corrections : add function call.
- *               to display $x add \ before $ so it will not consider as variable
+ * Corrections : add function call with value
+ *               to display $x value need to add variable in function definition as parameter
  */
 
 
@@ -48,5 +48,24 @@ echo substr($str, 0, 14)."”";
 /**
  * Corrections : add double quotes to the value of variable str
  */
+
+
+ 
+new_exercise(4);
+// === Exercise 4 ===
+// Sometimes debugging code is just like looking up code and syntax...
+// The print_r($week) should give:  Array ( [0] => mon [1] => tues [2] => wednes [3] => thurs [4] => fri [5] => satur [6] => sun )
+// Look up whats going wrong with this code, and then fix it, with ONE CHARACTER!
+
+forEach($week as &$day) {
+   $day = substr($day, 0, strlen($day)-3);
+}
+
+print_r($week);
+/**
+ * Corrections : correct forEach loop syntax and add & symbol in forEach, as it helps to update the array
+ */
+
+
 
 ?>
