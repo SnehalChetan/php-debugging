@@ -87,5 +87,103 @@ print_r($arr); // Array ([0] => a, [1] => b, [2] => c, ...) a-z alfabetical arra
  * Corrections : Change the condition in first for loop as letter!= 'aa' as we only want to display a to z
  * in forEach loop we just assign range of alphbets.
  */
+new_exercise(6);
+// === Final exercise ===
+// The fixed code should echo the following at the bottom:
+// Here is the name: $name - $name2
+// $name variables are decided as seen in the code, fix all the bugs whilst keeping the functionality!
+$arr = [];
+
+
+function combineNames($str1 = "", $str2 = "") {
+    $params = [$str1, $str2];
+    foreach($params as &$param) {
+        if ($param == "") {
+            $param = randomHeroName();
+        }
+    }
+    return implode( " - ",$params);
+}
+
+
+function randomGenerate($arr, $amount) {
+    for ($i = $amount; $i > 0; $i--) {
+        array_push($arr, randomHeroName());
+    }
+
+    return $amount;
+}
+
+function randomHeroName()
+{
+    $hero_firstnames = ["captain", "doctor", "iron", "Hank", "ant", "Wasp", "the", "Hawk", "Spider", "Black", "Carol"];
+    $hero_lastnames = ["America", "Strange", "man", "Pym", "girl", "hulk", "eye", "widow", "panther", "daredevil", "marvel"];
+    $heroes = [$hero_firstnames, $hero_lastnames];   
+    $len = count($heroes)-1; 
+    $randname = $heroes[rand(0,$len)][rand(0, 10)];
+
+    return $randname;
+}
+
+echo "Here is the name: " . combineNames();
+
+/*
+*   corrections : add semicolon at end of line, add return statement at the end of function. correct the syntax of implode function.
+*   reduce heroes array length in random function.
+*/
+
+
+new_exercise(7);
+function copyright(int $year) {
+    return "&copy; $year BeCode";
+}
+//print the copyright
+// $year = (int) date("Y");
+// echo copyright($year);
+echo copyright((int)date('Y'));
+
+/*
+* correction :  to display year convert string parameter to int and add echo
+*/
+
+
+new_exercise(8);
+function login(string $email, string $password) {
+    if($email == 'john@example.be' && $password == 'pocahontas') {
+        return  'Welcome John Smith';
+    } else{
+        return 'No access';
+    }
+}
+
+//do not change anything below
+//should great the user with his full name (John Smith)
+echo login('john@example.be', 'pocahontas');
+//no access
+echo login('john@example.be', 'dfgidfgdfg');
+//no access
+echo login('wrong@example.be', 'wrong');
+//you can change things again!
+   
+
+new_exercise(9);
+function isLinkValid(string $link) {
+    $unacceptables = array('https:','.doc','.pdf', '.jpg', '.jpeg', '.gif', '.bmp', '.png');
+
+    foreach ($unacceptables as $unacceptable) {
+        if (strpos($link, $unacceptable) == true) {
+            return 'Unacceptable Found<br />';
+        }
+    }
+    return 'Acceptable<br />';
+}
+//invalid link
+isLinkValid('http://www.google.com/hack.pdf');
+//invalid link
+isLinkValid('https://google.com');
+//VALID link
+isLinkValid('http://google.com');
+//VALID link
+isLinkValid('http://google.com/test.txt');
 
 ?>
